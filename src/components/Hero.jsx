@@ -14,7 +14,7 @@ import hero3 from "../assets/downloaded/Seafood Special.jpg";
 const slides = [
   {
     img: hero1,
-    title: "Experience Culinary Excellence",
+    title: "Experience Culinary",
     subtitle:
       "Luxury dining crafted with passion, elegance, and unforgettable taste.",
   },
@@ -84,7 +84,7 @@ export default function Hero() {
           {/* CONTENT */}
           <div className="absolute inset-0 z-30 flex items-start justify-center pt-28 md:pt-36">
 
-            <div className="text-center text-white px-6 md:px-20 max-w-4xl mx-auto">
+           <div className="text-center text-white px-6 md:px-20 max-w-5xl mx-auto mt-10">
 
               {/* SMALL LABEL */}
               <p className="uppercase tracking-[6px] text-yellow-500 text-sm mb-5 animate-pulse">
@@ -92,9 +92,9 @@ export default function Hero() {
               </p>
 
               {/* TITLE */}
-              <h1 className="text-2xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-5">
-                {slide.title}
-              </h1>
+             <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-5">
+  {slide.title}
+</h1>
 
               {/* SUBTITLE */}
               <p className="text-base md:text-xl text-gray-300 leading-relaxed mb-10 max-w-3xl mx-auto">
