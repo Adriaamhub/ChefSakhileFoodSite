@@ -5,23 +5,29 @@ import {
   FiPlay,
 } from "react-icons/fi";
 
+/* IMPORT IMAGES */
+import hero1 from "../assets/images/WhatsApp Image 2026-04-17 at 12.59.11 (1).jpeg";
+import hero2 from "../assets/downloaded/fine-dining.jpg";
+import hero3 from "../assets/downloaded/Seafood Special.jpg";
+
+/* SLIDES */
 const slides = [
   {
-    img: "src/assets/downloaded/Experience Culinary Art 2.png",
+    img: hero1,
     title: "Experience Culinary Excellence",
     subtitle:
       "Luxury dining crafted with passion, elegance, and unforgettable taste.",
   },
 
   {
-    img: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1600&auto=format&fit=crop",
+    img: hero2,
     title: "Taste Pure Perfection",
     subtitle:
       "Every dish is designed to create beautiful memories and rich flavors.",
   },
 
   {
-    img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1600&auto=format&fit=crop",
+    img: hero3,
     title: "Luxury Dining Experience",
     subtitle:
       "Discover premium cuisine in a modern and elegant atmosphere.",
@@ -31,7 +37,7 @@ const slides = [
 export default function Hero() {
   const [current, setCurrent] = useState(0);
 
-  // AUTO SLIDE
+  /* AUTO SLIDE */
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
@@ -73,85 +79,46 @@ export default function Hero() {
           <div className="absolute inset-0 bg-black/60"></div>
 
           {/* PREMIUM GRADIENT */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
 
           {/* CONTENT */}
-          <div className="relative z-30 h-full flex items-center px-6 md:px-20">
+          <div className="absolute inset-0 z-30 flex items-start justify-center pt-28 md:pt-36">
 
-            <div className="max-w-3xl text-white">
+            <div className="text-center text-white px-6 md:px-20 max-w-4xl mx-auto">
 
               {/* SMALL LABEL */}
-              <p className="uppercase tracking-[6px] text-yellow-500 text-sm mb-4">
+              <p className="uppercase tracking-[6px] text-yellow-500 text-sm mb-5 animate-pulse">
                 Fine Dining Restaurant
               </p>
 
               {/* TITLE */}
-              <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
+              <h1 className="text-2xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-5">
                 {slide.title}
               </h1>
 
               {/* SUBTITLE */}
-              <p className="text-lg md:text-2xl text-gray-300 leading-relaxed mb-8">
+              <p className="text-base md:text-xl text-gray-300 leading-relaxed mb-10 max-w-3xl mx-auto">
                 {slide.subtitle}
               </p>
 
               {/* BUTTONS */}
-              <div className="flex flex-wrap gap-5 mb-14">
+              <div className="flex flex-wrap justify-center gap-5">
 
-                <button className="bg-yellow-500 hover:bg-yellow-600 text-black px-8 py-4 rounded-full font-semibold transition shadow-2xl">
+                <button className="bg-yellow-500 hover:bg-yellow-600 text-black px-8 py-4 rounded-full font-semibold transition shadow-2xl hover:scale-105">
                   Explore Menu
                 </button>
 
-                <button className="flex items-center gap-3 border border-white/20 bg-white/10 backdrop-blur-md px-8 py-4 rounded-full hover:bg-white/20 transition">
+                <button className="flex items-center gap-3 border border-white/20 bg-white/10 backdrop-blur-md px-8 py-4 rounded-full hover:bg-white/20 transition hover:scale-105">
                   <FiPlay />
                   Watch Video
                 </button>
 
               </div>
 
-              {/* PREMIUM STATS */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-
-                <div className="bg-white/10 backdrop-blur-lg border border-white/10 rounded-2xl p-5">
-                  <h2 className="text-3xl font-bold text-yellow-500">
-                    15+
-                  </h2>
-                  <p className="text-gray-300 text-sm">
-                    Years Experience
-                  </p>
-                </div>
-
-                <div className="bg-white/10 backdrop-blur-lg border border-white/10 rounded-2xl p-5">
-                  <h2 className="text-3xl font-bold text-yellow-500">
-                    50K+
-                  </h2>
-                  <p className="text-gray-300 text-sm">
-                    Happy Customers
-                  </p>
-                </div>
-
-                <div className="bg-white/10 backdrop-blur-lg border border-white/10 rounded-2xl p-5">
-                  <h2 className="text-3xl font-bold text-yellow-500">
-                    120+
-                  </h2>
-                  <p className="text-gray-300 text-sm">
-                    Luxury Dishes
-                  </p>
-                </div>
-
-                <div className="bg-white/10 backdrop-blur-lg border border-white/10 rounded-2xl p-5">
-                  <h2 className="text-3xl font-bold text-yellow-500">
-                    5★
-                  </h2>
-                  <p className="text-gray-300 text-sm">
-                    Premium Rating
-                  </p>
-                </div>
-
-              </div>
-
             </div>
+
           </div>
+
         </div>
       ))}
 
@@ -171,27 +138,6 @@ export default function Hero() {
         <FiChevronRight size={26} />
       </button>
 
-      {/* CAROUSEL INDICATORS */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-40 flex gap-4">
-
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrent(index)}
-            className={`transition-all duration-300 rounded-full ${
-              current === index
-                ? "w-12 h-3 bg-yellow-500"
-                : "w-3 h-3 bg-white/40"
-            }`}
-          />
-        ))}
-
-      </div>
-
-      {/* SCROLL TEXT */}
-      <div className="absolute bottom-10 right-8 z-40 text-white/70 text-sm tracking-[4px] rotate-90 origin-right hidden md:block">
-        SCROLL DOWN
-      </div>
     </section>
   );
 }
